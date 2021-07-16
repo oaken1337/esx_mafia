@@ -7,4 +7,4 @@ Buduci da su ljudi sa Balkan Bullsa ovu skriptu poceli djelit pojedincima odluci
 
 https://streamable.com/v2lipn
 
-**NE PRUŽAM SUPPORT ZA OVU SKRIPTU**
+**NE PRUŽAM SUPPORT ZA OVU SKRIPTU - AKO MI SE JAVITE NA DISCORD ZBOG TE SKRIPTE DOBIJATE BLOCK**
