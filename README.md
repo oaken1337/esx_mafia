@@ -1,4 +1,4 @@
-# esx_mafia
+# esx_mafia with NUI
 ESX Mafia with NUI
 
 Made by: oaken, Njoda & Rolcika
