@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-a11y="true"></script>
+  <div class="page home">
+    <div class="outline">
+      <div class="title">Meni organizacija</div>
+      <div class="exit"><i class="fas fa-sign-out-alt"></i></div>
+      <div class="back"><i class="fas fa-chevron-left"></i></div>
+      <div class="list">
+        <div class="icon"></div>
+        <div class="selector"></div>
+        <div id='g' class="item" data-mode="g">Vozilo<div class="sub">Izvadi vozilo</div>
+        </div>
+        <div id='s' class="item" data-mode="s">Zaposlenici<div class="sub">Zaposli/Otpusti člana</div>
+        </div>
+        <div id='o' class="item" data-mode="o">Sef<div class="sub">Otvori sef</div>
+        </div>
+        <div id='f' class="item" data-mode="f">Informacije<div class="sub">Informacije o organizaciji</div>
+        </div>
+      </div>
+      <!--   VOZILA MENI   -->
+      <div class="vozila-naslov">Meni vozila</div>
+      <div class="vozila-ikona">🚘</div>
+      <div class="vozila">
+        <div class="vozila-text"><b>Osnovna vozila</b></div>
+        <div class="v1" data-mode="v1" onclick="spawnVehicle('Vozilo1')">Vozilo 1<div class="v1sub">Izvadi vozilo</div>
+        </div>
+        <div class="v1" data-mode="v2" onclick="spawnVehicle('Vozilo2')">Vozilo 2<div class="v1sub">Izvadi vozilo</div>
+        </div>
+        <div class="v1" data-mode="v3" onclick="spawnVehicle('Vozilo3')">Vozilo 3<div class="v1sub">Izvadi vozilo</div>
+        </div>
+        <!--   PREMIUM VOZILA   -->
+        <div class="vozila-text1"><b>VIP vozila</b></div>
+        <div class="v2" data-mode="v4" onclick="spawnVehicleVip('Vozilo4')">Vozilo 4<div class="v2sub">Izvadi vozilo - VIP</div>
+        </div>
+        <div class="v2" data-mode="v5" onclick="spawnVehicleVip('Vozilo5')">Vozilo 5<div class="v2sub">Izvadi vozilo - VIP</div>
+        </div>
+        <div class="v2" data-mode="v6" onclick="spawnVehicleVip('Vozilo6')">Vozilo 6<div class="v2sub">Izvadi vozilo - VIP</div>
+        </div>
+        <div class="v2" data-mode="v8" onclick="spawnVehicleVip('Vozilo7')">VIP Motor<div class="v2sub">Izvadi motor - VIP</div>
+        </div>
+        <div class="v2" data-mode="v8" onclick="spawnVehicleVip('Vozilo8')">Helikopter<div class="v2sub">Izvadi heli - VIP</div>
+        <div class="vozila-novip"><b>*Nemate VIP status organizacije ili nemate dovoljan VIP level*</b></div>
+        </div>
+        <!--   BROD/HELI VOZILA   -->
+      </div>
+      <!--   ZAPOSLENICI MENI   -->
+      <div class="zaposlenici-naslov">Zaposlenici</div>
+      <div class="zaposlenici-ikona">🧑‍🤝‍🧑</div>
+      <div class="zaposlenici">
+        <div class="zaposlenici-text"><b>Zapošljavanje</b></div>
+        <!--<div class="novac-text">Novac u dzepu: 1000$</div>-->
+        <!--<input class="zaposlenici-input" placeholder='ID' type='number'></input>-->
+        <div class="zaposlenici-zaposli-btn" onclick="zaposliIgraca()">Otvori<div class="zaposlenici-zaposli-btnsub">Meni za zaposljavanje</div>
+        </div>
+        <div class="zaposlenici-clanovi"><b>Članovi</b></div>
+        <!--<select class="zaposlenici-lista" id="zaposlenici-lista" size="1">
+        <option value="*igrac1*">*igrac1*</option>
+        <option value="*igrac2*">*igrac2*</option>
+        <option value="*igrac3*">*igrac3*</option>
+        <option value="*igrac4*">*igrac4*</option>
+        <option value="*igrac5*">*igrac5*</option>
+        <option value="*igrac6*">*igrac6*</option>
+        <option value="*igrac7*">*igrac7*</option>
+        <option value="*igrac8*">*igrac8*</option>
+        <option value="*igrac9*">*igrac9*</option>
+        <option value="*igrac10*">*igrac10*</option>
+        </select>-->
+        
+        <!--<input class="zaposlenici-lista" list="zaposlenici">
+        <datalist class="zaposlenici-lista" id="zaposlenici">
+          <option value="*igrac*">
+          <option value="*igrac*">
+          <option value="*igrac*">
+          <option value="*igrac*">
+          <option value="*igrac*">
+          <option value="*igrac*">
+          <option value="*igrac*">
+          <option value="*igrac*">
+          <option value="*igrac*">
+          <option value="*igrac*">
+          <option value="*igrac*">
+          <option value="*igrac*">
+          <option value="*igrac*">
+          <option value="*igrac*">
+          <option value="*igrac*">
+        </datalist>-->
+        <div class="zaposlenici-otpusti-btn" onclick="listaClanova()">Otvori<div class="zaposlenici-otpusti-btnsub">Lista clanova</div></div>
+        <!--<div class="zaposlenici-otpusti-btn">RankUP<div class="zaposlenici-otpusti-btnsub">Unaprijedi igrača</div></div>-->
+      </div>
+      <!--   NOVAC MENI   -->
+      <div class="novac-naslov">Novac Meni</div>
+      <div class="novac-ikona">💳</div>
+      <div class="novac">
+        <div id="novac" class="novac-text"><b>Novac u dzepu:</b> Ucitavanje...</div>
+        <div id="novacorg" class="novac-text1"><b>Novac u organizaciji:</b>Ucitavanje...</div>
+        <!--<div class="novac-text">Novac u dzepu: 1000$</div>-->
+        <input id="novacinput" class="novac-input" placeholder='Količina' type='number'></input>
+        <div id="uplati" class="novacbtn" onclick="depositMoney()">Uplati<div class="novacsub">Uplati novac</div>
+        </div>
+        <div id="isplati" class="novacbtn" onclick="withdrawMoney()">Isplati<div class="novacsub">Isplati novac</div>
+        </div>
+      </div>
+
+      <!--   SEF MENI   -->
+      <div class="sef-naslov">Sef Meni</div>
+      <div class="sef-ikona">💼</div>
+      <div class="sef">
+        <div id="sefotvori" class="sefbtn" onclick="otvoriSef()">Otvori<div class="sefbtnsub">Otvori sef</div>
+        </div>
+      </div>
+
+      <!--   INFO MENI   -->
+      <div class="info-naslov">Informacije</div>
+      <div class="info-ikona">📑</div>
+      <div class="info">
+        <div id="info-ime" class="info-ime"><b>Ime firme:</b>&nbsp;*UCITAVANJE*</div>
+        <!--<div id="info-novac" class="info-ime info-novac"><b>Novac u sefu:</b>&nbsp;*UCITAVANJE*</div>-->
+        <div id="info-vip" class="info-ime info-vip"><b>VIP Level:</b>&nbsp;*UCITAVANJE*</div>
+        <!--<div id="info-ptext" class="info-ime info-pime"><b>Promjeni ime organizacije</div>
+        <input id="info-pinput" class="info-input" placeholder='Ime' type='text'></input>
+        <div id="info-pbtn" class="info-pime-btn">U redu<div class="info-pime-btnsub">Admini će biti obavješteni</div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--<div class="debug"></div>-->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
